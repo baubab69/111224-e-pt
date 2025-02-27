@@ -12,10 +12,29 @@
 
 # your code here
 
+import datetime 
+
+
+class TimeLogger:
+
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+        start = datetime.datetime.now()
+        print(start)
+        result = self.func(*args, **kwargs)
+        end = datetime.datetime.now()
+        print(f'Время выполнения функции: {end - start}')
+        return result
+
 def main():
-    # your code here
-    pass
+    @TimeLogger
+    def test_func(*args):
+        return sum(args)
+    print(test_func(*range(100000)))
 
 
 if __name__ == '__main__':
     main()
+    

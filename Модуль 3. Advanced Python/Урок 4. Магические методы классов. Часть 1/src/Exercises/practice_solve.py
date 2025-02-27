@@ -24,22 +24,24 @@ class AdvancedCalculator:
         self.values = values
         self.log = []
         self.call_count = 0
+        super().__setattr__('log', [])
 
-    def __setattr__(self, name, value):
-        self.log.append(f"Setting attribute {name} to {value}")
-        super().__setattr__(name, value)
-
+    def __setattr__(self, key, value):
+        self.log.append(f'Setting attribute {key} to {value}')
+        super().__setattr__(key, value)
+    
     def __getattribute__(self, name):
         log = super().__getattribute__('log')
-        log.append(f"Getting attribute {name}")
+        if name != 'log':
+            log.append(f'Getting attribute {name}')
         return super().__getattribute__(name)
-
-    def __getattr__(self, name):
-        self.log.append(f"Attribute {name} not found, returning default value")
-        return "Default value"
-
+    
+    def __getattr__(self,name):
+        self.log.append(f'Attribute {name} not found, returning default value')
+        return 'Default Value'
+    
     def __delattr__(self, name):
-        self.log.append(f"Deleting attribute {name}")
+        self.log.append(f'Deleting attribute {name}')
         super().__delattr__(name)
 
     def __call__(self):
