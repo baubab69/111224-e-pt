@@ -16,10 +16,10 @@
 # Реализуйте класс-декоратор для логирования времени выполнения методов.
 # Реализуйте методы __str__, __repr__, __len__ и __abs__.
 
-# your code here
+# your src here
 
 def main():
-    # your code here
+    # your src here
     pass
 
 

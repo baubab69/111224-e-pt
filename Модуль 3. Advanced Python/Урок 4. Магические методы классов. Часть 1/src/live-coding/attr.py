@@ -1,4 +1,4 @@
-class MyClass:
+class MyClass(object):
     def __init__(self, value):
         # Используем метод __setattr__ для установки атрибута
         self.__setattr__('value', value)
@@ -45,3 +45,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
