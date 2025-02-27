@@ -10,7 +10,7 @@
 # Метод __call__ должен измерять время выполнения функции и выводить эту информацию на экран.
 # Напишите тестовый код, который демонстрирует использование этого декоратора.
 
-# your code here
+# your src here
 
 import datetime 
 
@@ -33,6 +33,8 @@ def main():
     def test_func(*args):
         return sum(args)
     print(test_func(*range(100000)))
+    # your src here
+    pass
 
 
 if __name__ == '__main__':
