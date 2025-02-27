@@ -21,9 +21,9 @@ import time
 
 class EnhancedList:
     def __init__(self, items):
-        self.items = items
-        self.log = []
-        self.call_count = 0
+        super().__setattr__('items', items)
+        super().__setattr__('log', [])
+        super().__setattr__('call_count', 0)
 
     def __setattr__(self, name, value):
         self.log.append(f"Setting attribute {name} to {value}")
@@ -35,8 +35,8 @@ class EnhancedList:
         return super().__getattribute__(name)
 
     def __getattr__(self, name):
-        self.log.append(f"Attribute {name} not found, returning default value")
-        return "Default value"
+        self.log.append(f"Attribute {name} not found, error")
+        raise ValueError(f"Attribute {name} not found")
 
     def __delattr__(self, name):
         self.log.append(f"Deleting attribute {name}")
@@ -100,8 +100,8 @@ def main():
     elist = EnhancedList([1, -2, 3, -4])
 
     # Использование методов
-    print(elist)  # Использование __str__
-    print(repr(elist))  # Использование __repr__
+    print(elist)  # Использование __str__ EnhancedList with items: [1, -2, 3, -4]
+    print(repr(elist))  # Использование __repr__ EnhancedList([1, -2, 3, -4])
     print(len(elist))  # Использование __len__
     print(abs(elist))  # Использование __abs__
 

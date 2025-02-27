@@ -17,7 +17,7 @@ class Person:
         name: string
         age: int
     """
-    pass  # you code here
+    pass  # you src here
 
 
 class Student(Person):
@@ -25,7 +25,7 @@ class Student(Person):
     Class Student
     attributes: student_id: int
     """
-    pass  # you code here
+    pass  # you src here
 
 
 class Teacher(Person):
@@ -33,7 +33,7 @@ class Teacher(Person):
     Class Teacher
     attributes: subject: string
     """
-    pass  # you code here
+    pass  # you src here
 
 
 class Vehicle:
@@ -43,7 +43,7 @@ class Vehicle:
         make: string
         model: string
     """
-    pass  # you code here
+    pass  # you src here
 
 
 class Car(Vehicle):
@@ -52,7 +52,7 @@ class Car(Vehicle):
     attributes:
         num_doors: int
     """
-    pass  # you code here
+    pass  # you src here
 
 
 class Motorcycle(Vehicle):
@@ -61,11 +61,11 @@ class Motorcycle(Vehicle):
     attributes:
         has_sidecar: bool
     """
-    pass  # you code here
+    pass  # you src here
 
 
 def main():
-    pass  # you code here
+    pass  # you src here
 
 
 if __name__ == '__main__':
