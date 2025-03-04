@@ -1,14 +1,7 @@
 # Напишите класс, который разделит итератор и итерируемый объект.
 
+
 class IterableClass:
-    def __init__(self, values):
-        self.values = values
-
-    def __iter__(self):
-        return IterableClassIterator(self.values)
-
-
-class IterableClassIterator:
     def __init__(self, values):
         self.values = values
         self.index = 0
