@@ -5,11 +5,11 @@ class ParentClass:
         self._protected_attr = protected_value
         self.__private_attr = private_value
 
-    # def get_private_attr(self):
-    #     return self.__private_attr
-    #
-    # def set_private_attr(self, value):
-    #     self.__private_attr = value
+    def get_private_attr(self):
+        return self.__private_attr
+
+    def set_private_attr(self, value):
+        self.__private_attr = value
 
 
 class ChildClass(ParentClass):

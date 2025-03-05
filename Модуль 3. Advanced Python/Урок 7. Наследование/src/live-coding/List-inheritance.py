@@ -17,9 +17,15 @@
 # является ли переданный класс подклассом list.
 # Тестирование: Примеры показывают использование новых методов CustomList и проверку,
 # является ли CustomList подклассом list.
+from copy import copy
+
 
 class CustomList(list):
+    _protected = []
+    __private = []
     def sum(self):
+        self._protected = []
+        self.__private  = []
         return sum(self)
 
     def mean(self):
@@ -27,6 +33,10 @@ class CustomList(list):
             return 0
         return sum(self) / len(self)
 
+class SomCh(CustomList):
+    def some_foo(self):
+        self._protected = []
+        self.__private  = []
 
 def check_list_subclass(cls):
     return issubclass(cls, list)
@@ -35,6 +45,8 @@ def check_list_subclass(cls):
 def main():
     # Тестирование
     custom_list = CustomList([1, 2, 3, 4, 5])
+    custom_list._protected
+    custom_list._CustomList__private
 
     print(custom_list.sum())  # Output: 15
     print(custom_list.mean())  # Output: 3.0
@@ -45,4 +57,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    d = SomCh()
+    d.some_foo()
+    print()
