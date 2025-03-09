@@ -91,17 +91,69 @@
 # 4. Пользователь должен иметь возможность удалить задачу. Чтобы удалить задачу, запросите ее номер.
 # Если номер корректный, то удалите ее.
 
-# tasks = []
-#
-# while True:
-#     # В решении используется цикл, чтобы программа работала пока вы ее принудительно не завершите через Ctr-C.
-#     # Циклы вы еще не проходили и для решения задачи эти знания не нужны. Просто пишите код с отступом, продолжая программу.
-#     print("\nСистема управления задачами")
-#     print("1. Добавить задачу")
-#     print("2. Показать задачи")
-#     print("3. Отметить задачу как выполненную")
-#     print("4. Удалить задачу")
-#     choice = input("Выберите действие, введя его номер: ")
-#
+# 5. Пользователь должен иметь возможность завершить программу. Для этого он должен ввести "exit".
+
+
+class ToDoList:
+    def __init__(self):
+        self.tasks = []
+        self.task_number = 1
+        self.task_id = 0
+
+    def add_task(self):
+        task = input("Введите задачу: ")
+        self.tasks.append([self.task_number, task, False])
+        self.task_number += 1
+    
+    def show_tasks(self):
+        for i in range(len(self.tasks)):
+            print(f"{self.tasks[i][0]}. {self.tasks[i][1]} - {self.tasks[i][2]}")
+    
+    def mark_task(self):
+        self.task_id = int(input("Введите номер задачи: "))
+    
+        for i in range(len(self.tasks)):
+            if self.task_id == self.tasks[i][0]:
+                self.tasks[i][2] = True
+                break
+            else:
+                print("Некорректный номер задачи.")
+    
+    def delete_task(self):
+        self.task_id = int(input("Введите номер задачи: "))
+    
+        for i in range(len(self.tasks)):
+            if self.task_id == self.tasks[i][0]:
+                self.tasks.pop(i)
+                break
+    
+    def run(self):
+    
+        while True:
+            command = input('''
+                            Введите команду:
+                            add - добавить задачу
+                            show - показать задачи
+                            mark - отметить задачу как выполненную
+                            delete - удалить задачу
+                            exit - завершить программу''')
+            if command == "add":
+                self.add_task()
+            elif command == "show":
+                self.show_tasks()
+            elif command == "mark":
+                self.mark_task()
+            elif command == "delete":
+                self.delete_task()
+            elif command == "exit":
+                break
+            else:
+                print("Некорректная команда.")
+
+if __name__ == "__main__":
+    to_do_list = ToDoList()
+    to_do_list.run()
+
+
 #     # Продолжите программу ниже. Код пишите с отсутпом, как принты выше.
 
