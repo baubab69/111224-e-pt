@@ -46,10 +46,10 @@ def check_subclass(cls1, cls2):
 
 def main():
     # Тестирование
-    print(check_subclass(SoftwareEngineer, Engineer))  # Output: True
-    print(check_subclass(SoftwareEngineer, Employee))  # Output: True
-    print(check_subclass(Manager, Engineer))  # Output: False
-    print(check_subclass(Intern, Employee))  # Output: True
+    print(issubclass(SoftwareEngineer, Engineer))  # Output: True
+    print(issubclass(SoftwareEngineer, Employee))  # Output: True
+    print(issubclass(Manager, Engineer))  # Output: False
+    print(issubclass(Intern, Employee))  # Output: True
 
 
 if __name__ == "__main__":
