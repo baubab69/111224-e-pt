@@ -7,6 +7,7 @@ class Animal(ABC):
         pass
 
 
+
 class Dog(Animal):
     def speak(self):
         return "Woof!"
@@ -26,3 +27,4 @@ def main():
 
     # Попытка создания экземпляра абстрактного класса вызывает ошибку
     # animal = Animal()  # Raises TypeError
+main()

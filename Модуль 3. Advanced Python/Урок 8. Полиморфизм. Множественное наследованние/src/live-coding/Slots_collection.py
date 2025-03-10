@@ -4,7 +4,7 @@ class Point:
     def __init__(self, x=0, y=0):
         self.x = x
         self.y = y
-        # self.__length = (x**2 + y**2)**0.5
+        # self.length = (x**2 + y**2)**0.5
 
     @property
     def length(self):
