@@ -174,6 +174,7 @@ def copy_file(origin_path, new_path):
             if not data:
                 break
             yield data
+
     def write_file_by_cunck(file, data):
         for chunk in data:
             file.write(chunk)
