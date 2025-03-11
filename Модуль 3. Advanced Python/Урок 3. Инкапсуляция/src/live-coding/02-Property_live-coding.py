@@ -43,10 +43,10 @@ class Car:
 def main():
     car = Car("Toyota", 2020)
     print(car.get_model())
-    car.set_model("BMW")
-    print(car.model)  # Доступ через геттер
-    car.year = 2021  # Изменение через сеттер
-    print(car.year)
+    # car.set_model("BMW")
+    # print(car.model)  # Доступ через геттер
+    # car.year = 2021  # Изменение через сеттер
+    # print(car.year)
 
 
 if __name__ == "__main__":

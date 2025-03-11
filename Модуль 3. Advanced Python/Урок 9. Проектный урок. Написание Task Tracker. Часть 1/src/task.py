@@ -76,10 +76,7 @@ class Task:
 
     @property
     def id(self):
-        """
-        Get task id
-        :return:
-        """
+        return self.__id
 
     @id.setter
     def id(self, new_id: int):

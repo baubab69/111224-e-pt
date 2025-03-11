@@ -1,5 +1,7 @@
 import datetime
 from icecream import ic as print
+
+
 # Тема: Модуль datetime
 # Покажите в режиме live-coding и объясните как использовать модуль datetime:
 # - получать дату и время,

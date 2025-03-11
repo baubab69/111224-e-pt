@@ -4,7 +4,7 @@
 # - работу указателей.
 import json
 
-from icecream import ic as print
+
 # file = open('./text_files/test.txt', 'w')
 # file.write('Hello, world!\n')
 # file.close()
@@ -31,12 +31,12 @@ from icecream import ic as print
 # - работу менеджера контекста;
 # - чтение и запись данных в json-формате.
 
-with open('test.json') as file:
-    data = file.read()
-    data_obj = json.loads(data)
-    print(data_obj)
+# with open('test.json') as file:
+#     data = file.read()
+#     data_obj = json.loads(data)
+#     print(data_obj)
 
-with open('test.json') as file:
+with open('Модуль 2. Core Python/Урок 14. Работа с файлами/inventory.json') as file:
     data_ = json.load(file)
     for el in data_:
         print(el)
